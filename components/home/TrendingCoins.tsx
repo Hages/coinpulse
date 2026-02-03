@@ -7,11 +7,13 @@ import DataTable from '@/components/DataTable';
 import { fetcher } from '@/lib/coingecko.actions';
 
 const TrendingCoins = async () => {
-  const trendingCoins = await fetcher<{ coins: TrendingCoin[] }>(
-    '/search/trending',
-    undefined,
-    300,
-  );
+  let trendingCoins: { coins: TrendingCoin[] };
+  try {
+    trendingCoins = await fetcher<{ coins: TrendingCoin[] }>('/search/trending', undefined, 300);
+  } catch (error) {
+    console.error('Failed to fetch trending coins:', error);
+    return null;
+  }
 
   const columns: DataTableColumn<TrendingCoin>[] = [
     {
@@ -33,7 +35,8 @@ const TrendingCoins = async () => {
       cellClassName: 'name-cell',
       cell: (coin) => {
         const item = coin.item;
-        const isTrendingUp = item.data.price_change_percentage_24h.usd > 0;
+        const pct = Number(item?.data?.price_change_percentage_24h?.usd ?? 0);
+        const isTrendingUp = pct > 0;
 
         return (
           <div
@@ -49,7 +52,7 @@ const TrendingCoins = async () => {
                 <TrendingDown width={16} height={16} />
               )}
             </p>
-            <p>{item.data.price_change_percentage_24h.usd.toFixed(2)}%</p>
+            <p>{pct.toFixed(2)}%</p>
           </div>
         );
       },
@@ -57,7 +60,10 @@ const TrendingCoins = async () => {
     {
       header: 'Price',
       cellClassName: 'price-cell',
-      cell: (coin) => formatCurrency(coin.item.data.price),
+      cell: (coin) => {
+        const price = coin?.item?.data?.price;
+        return formatCurrency(price ?? 0);
+      },
     },
   ];
 
