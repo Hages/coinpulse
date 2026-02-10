@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="394b07f0-6683-47ec-b15a-ebcc23c2e222" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/CandlestickChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CandlestickChart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/home/CoinOverview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/CoinOverview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +67,7 @@
 }</component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1771657410082" />
-    <option name="spentUsd" value="0.1654686" />
+    <option name="spentUsd" value="0.18370865" />
   </component>
   <component name="RecapUselessUpdatesCounter">
     <option name="suspendCountdown" value="4" />
@@ -109,7 +107,7 @@
       <workItem from="1770005307877" duration="5131000" />
       <workItem from="1770011575097" duration="3136000" />
       <workItem from="1770070063037" duration="6051000" />
-      <workItem from="1770693388058" duration="10234000" />
+      <workItem from="1770693388058" duration="11112000" />
     </task>
     <servers />
   </component>
